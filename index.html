@@ -28,10 +28,6 @@ header {
     margin-top: 20px;
 }
 
-h2 {
-    margin-top: 30px;
-}
-
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -49,17 +45,12 @@ button {
     width: 100%;
     border-radius: 8px;
     font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #059669;
 }
 
 #resultado {
     display: none;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 </style>
 </head>
@@ -77,81 +68,50 @@ button:hover {
 <form id="formulario">
 
 <h2>Información General</h2>
-
 <input type="text" placeholder="Nombre del negocio" required>
 <input type="text" placeholder="Nombre de quien llena la encuesta" required>
 <input type="date" required>
-
-<input type="number" placeholder="¿Cuántos años tiene el negocio?" required>
-<input type="number" placeholder="¿Cuántos empleados tienen?" required>
-<input type="text" placeholder="¿Qué tipo de muebles venden?" required>
-<input type="text" placeholder="¿Trabajan por pedido o inventario?" required>
-<input type="text" placeholder="¿Quién es su cliente ideal? (Ejemplo) negocios, familias, oficinas etc" required>
-
-<textarea placeholder="¿Qué los diferencia de otras mueblerías?" required></textarea>
-
-<input type="number" placeholder="Ticket promedio (monto promedio que gasta un cliente)" required>
+<input type="number" placeholder="Años del negocio" required>
+<input type="number" placeholder="Empleados" required>
+<input type="text" placeholder="Tipo de muebles" required>
+<input type="text" placeholder="Pedido o inventario" required>
+<input type="text" placeholder="Cliente ideal (hogares, oficinas, empresas, etc)" required>
+<textarea placeholder="Diferenciación (Que hace a su mueblería diferente?)" required></textarea>
+<input type="number" placeholder="Ticket promedio (Cuanto gasta en promedio cada cliente)" required>
 
 <h2>Ventas</h2>
-
-<input type="text" placeholder="¿De dónde vienen sus clientes? (Facebook, Instagram, WhatsApp, llamadas)" required>
-<input type="number" placeholder="¿Cuántas ventas hacen al mes?" required>
-<input type="text" placeholder="¿Meses buenos y malos?" required>
-<input type="text" placeholder="¿Pierden clientes? ¿Por qué?" required>
-<input type="text" placeholder="¿Cuánto duran en cerrar una venta?" required>
+<input type="text" placeholder="Origen clientes (Facebook, Instagram, referencias o WhatsApp)" required>
+<input type="number" placeholder="Ventas mensuales" required>
+<input type="text" placeholder="Meses buenos/malos" required>
+<input type="text" placeholder="Pérdida de clientes? Por que?" required>
+<input type="text" placeholder="Tiempo de cierre" required>
 
 <h2>Marketing</h2>
-
-<input type="text" placeholder="¿Quién maneja las redes?" required>
-<input type="text" placeholder="¿Con qué frecuencia publican?" required>
-<input type="text" placeholder="¿Qué tipo de contenido suben?" required>
-<input type="text" placeholder="¿Las redes generan ventas?" required>
-<input type="text" placeholder="Tiempo de respuesta a clientes" required>
-
-<input type="text" placeholder="¿Invierten en publicidad?" required>
-<input type="number" placeholder="¿Cuánto invierten al mes?" required>
-<input type="text" placeholder="¿Quién maneja los anuncios?" required>
-<input type="text" placeholder="¿Costo por cliente?" required>
+<input type="text" placeholder="Quein es el responsable de redes" required>
+<input type="text" placeholder="Frecuencia publicación" required>
+<input type="text" placeholder="Tipo de contenido" required>
+<input type="text" placeholder="Ventas por redes" required>
+<input type="text" placeholder="Tiempo respuesta" required>
+<input type="text" placeholder="Invierte en ads" required>
+<input type="number" placeholder="Inversión mensual" required>
+<input type="text" placeholder="Responsable ads" required>
 
 <h2>Operación</h2>
+<input type="text" placeholder="Tiempo fabricación" required>
+<input type="text" placeholder="Problema principal" required>
+<input type="text" placeholder="Rechazos" required>
+<input type="text" placeholder="Tienen catálogo o solo mandán fotos de lo que tienen" required>
+<input type="text" placeholder="Registran clientes" required>
+<input type="text" placeholder="Tienen base de datos" required>
+<input type="text" placeholder="Uso de CRM (Sistema de gestión de clientes)" required>
 
-<input type="text" placeholder="Tiempo de fabricación" required>
-<input type="text" placeholder="Mayor problema operativo" required>
-<input type="text" placeholder="¿Rechazan pedidos?" required>
-<input type="text" placeholder="¿Tienen catálogo? O solo envian fotos del o que tienen?" required>
-
-<input type="text" placeholder="¿Registran clientes?" required>
-<input type="text" placeholder="¿Tienen base de datos?" required>
-<input type="text" placeholder="¿Usan CRM? (software para gestionar clientes)" required>
-
-<textarea placeholder="¿Cómo hacen seguimiento a clientes?" required></textarea>
-
-<input type="text" placeholder="¿Cómo cotizan? (formal o WhatsApp)" required>
-<input type="text" placeholder="¿Dan seguimiento después de la venta?" required>
-<input type="text" placeholder="¿Clientes perdidos?" required>
-
-<h2>Estrategia</h2>
-
-<input type="text" placeholder="¿Quieren crecer?" required>
-<input type="text" placeholder="¿Quieren aumentar ventas?" required>
-
-<textarea placeholder="¿Qué mejorarían del negocio?" required></textarea>
-<textarea placeholder="¿Por qué un cliente los elige?" required></textarea>
-<textarea placeholder="¿Qué quisieran mejorar?" required></textarea>
-<textarea placeholder="Comentarios adicionales" required></textarea>
+<textarea placeholder="Dan seguimiento a clientes que contactarón" required></textarea>
 
 <button type="submit">Enviar Diagnóstico</button>
 
 </form>
 
-<div id="resultado">
-<h2>✅ Diagnóstico enviado</h2>
-<p>Con esta información podremos darte un análisis más preciso de tu negocio.</p>
-
-<a href="https://wa.me/50688356653" target="_blank">
-<button>Contactar por WhatsApp</button>
-</a>
-</div>
+<div id="resultado"></div>
 
 </div>
 
@@ -162,351 +122,64 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     const inputs = document.querySelectorAll("input");
     const textareas = document.querySelectorAll("textarea");
 
+    let score = 0;
+
+    // REGLAS DE PUNTUACIÓN
+    if(inputs[11].value > 20) score += 15;
+    if(inputs[15].value.toLowerCase().includes("diario")) score += 10;
+    if(inputs[19].value.toLowerCase().includes("si")) score += 10;
+    if(inputs[25].value.toLowerCase().includes("si")) score += 10;
+    if(inputs[26].value.toLowerCase().includes("si")) score += 10;
+    if(inputs[27].value.toLowerCase().includes("si")) score += 10;
+    if(textareas[1].value.length > 20) score += 10;
+
+    let nivel = "";
+    let mensaje = "";
+
+    if(score <= 40){
+        nivel = "🔴 Nivel Bajo";
+        mensaje = "Tu negocio tiene oportunidades claras de mejora en estructura, ventas y procesos.";
+    } else if(score <= 70){
+        nivel = "🟡 Nivel Medio";
+        mensaje = "Tu negocio tiene buen potencial, pero necesita optimización para crecer.";
+    } else {
+        nivel = "🟢 Nivel Alto";
+        mensaje = "Tu negocio está bien estructurado, ahora el enfoque es escalar.";
+    }
+
     const data = {
         negocio: inputs[0].value,
         nombre: inputs[1].value,
-        anos: inputs[3].value,
-        empleados: inputs[4].value,
-        tipoMuebles: inputs[5].value,
-        pedidoInventario: inputs[6].value,
-        clienteIdeal: inputs[7].value,
-        diferenciacion: textareas[0].value,
-        ticket: inputs[8].value,
-        origen: inputs[9].value,
-        ventas: inputs[10].value,
-        meses: inputs[11].value,
-        perdidas: inputs[12].value,
-        cierre: inputs[13].value,
-        redes: inputs[14].value,
-        frecuencia: inputs[15].value,
-        contenido: inputs[16].value,
-        ventasRedes: inputs[17].value,
-        respuesta: inputs[18].value,
-        ads: inputs[19].value,
-        inversion: inputs[20].value,
-        responsableAds: inputs[21].value,
-        costoCliente: inputs[22].value,
-        fabricacion: inputs[23].value,
-        problema: inputs[24].value,
-        rechazos: inputs[25].value,
-        catalogo: inputs[26].value,
-        registro: inputs[27].value,
-        baseDatos: inputs[28].value,
-        crm: inputs[29].value,
-        seguimiento: textareas[1].value,
-        cotizacion: inputs[30].value,
-        seguimientoPost: inputs[31].value,
-        perdidos: inputs[32].value,
-        crecer: inputs[33].value,
-        aumentar: inputs[34].value,
-        mejoras: textareas[2].value,
-        eleccion: textareas[3].value,
-        mejorar: textareas[4].value,
-        feedback: textareas[5].value
+        anos: inputs[3].value
     };
 
     fetch("https://script.google.com/macros/s/AKfycbx2P8MOXI-p3ywtJNQwlElpJnSbkL0g_iuzwYMjzxYOuLPpuTC_T2qHIkgGaJ-l76n6CQ/exec", {
         method: "POST",
         body: JSON.stringify(data)
-    })
-    .then(() => {
-        document.getElementById("formulario").style.display = "none";
-        document.getElementById("resultado").style.display = "block";
-    })
-    .catch(() => alert("Error al enviar. Intente de nuevo."));
-});
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario de Diagnóstico</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-h2 {
-    margin-top: 30px;
-    color: #0f172a;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-button {
-    margin-top: 20px;
-    padding: 15px;
-    width: 100%;
-    background: #16a34a;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.result {
-    margin-top: 30px;
-    padding: 20px;
-    background: #ecfdf5;
-    border: 1px solid #16a34a;
-    border-radius: 10px;
-    display: none;
-}
-
-.whatsapp {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    background: #25D366;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-    <h1>Formulario de Diagnóstico</h1>
-    <p>Gestión Comercial Esquivel | By Oscar Esquivel</p>
-</header>
-
-<div class="container">
-
-<form id="formulario">
-
-<h2>Información General</h2>
-
-<label>Nombre del comercio</label>
-<input type="text" required>
-
-<label>Nombre de quien llena la encuesta</label>
-<input type="text" required>
-
-<label>Fecha</label>
-<input type="date" required>
-
-<h2>Negocio</h2>
-
-<label>Años operando</label>
-<input type="number">
-
-<label>Cantidad de empleados</label>
-<input type="number">
-
-<label>Tipo de muebles que vende más</label>
-<input type="text">
-
-<label>¿Trabaja sobre pedido o inventario?</label>
-<input type="text">
-
-<label>Cliente ideal</label>
-<input type="text">
-
-<label>Diferenciación del negocio</label>
-<textarea></textarea>
-
-<label>Ticket promedio (monto promedio por venta)</label>
-<input type="number">
-
-<h2>Ventas</h2>
-
-<label>Origen de clientes</label>
-<input type="text">
-
-<label>Ventas mensuales</label>
-<input type="number">
-
-<label>Meses fuertes y bajos</label>
-<input type="text">
-
-<label>Razones por pérdida de clientes</label>
-<input type="text">
-
-<label>Tiempo para cerrar una venta</label>
-<input type="text">
-
-<h2>Redes Sociales</h2>
-
-<label>¿Quién maneja redes?</label>
-<input type="text">
-
-<label>Frecuencia de publicación</label>
-<input type="text">
-
-<label>Tipo de contenido</label>
-<input type="text">
-
-<label>¿Facebook genera ventas?</label>
-<input type="text">
-
-<label>Tiempo de respuesta a mensajes</label>
-<input type="text">
-
-<h2>Inversión</h2>
-
-<label>¿Invierte en publicidad?</label>
-<input type="text">
-
-<label>Inversión mensual aproximada</label>
-<input type="number">
-
-<label>¿Quién maneja la pauta?</label>
-<input type="text">
-
-<label>¿Miden costo por cliente?</label>
-<input type="text">
-
-<h2>Operación</h2>
-
-<label>Tiempo de fabricación</label>
-<input type="text">
-
-<label>Mayor problema del negocio</label>
-<input type="text">
-
-<label>¿Han rechazado pedidos?</label>
-<input type="text">
-
-<label>¿Tienen catálogo?</label>
-<input type="text">
-
-<h2>Estructura de Ventas</h2>
-
-<label>¿Registran clientes que consultan?</label>
-<input type="text">
-
-<label>¿Base de datos de clientes?</label>
-<input type="text">
-
-<label>¿Utilizan CRM? (seguimiento de clientes)</label>
-<input type="text">
-
-<label>¿Cómo dan seguimiento?</label>
-<textarea></textarea>
-
-<label>¿Cotizan formalmente o por WhatsApp?</label>
-<input type="text">
-
-<label>¿Hacen seguimiento después de cotizar?</label>
-<input type="text">
-
-<label>¿Cuántos clientes pierden por falta de seguimiento?</label>
-<input type="text">
-
-<h2>Visión</h2>
-
-<label>¿Quieren crecer?</label>
-<input type="text">
-
-<label>¿Quieren aumentar ventas?</label>
-<input type="text">
-
-<label>¿Qué desean mejorar?</label>
-<textarea></textarea>
-
-<h2>Percepción</h2>
-
-<label>¿Por qué lo eligen?</label>
-<textarea></textarea>
-
-<label>¿Qué puede mejorar?</label>
-<textarea></textarea>
-
-<label>Feedback negativo de clientes</label>
-<textarea></textarea>
-
-<button type="submit">Generar Diagnóstico</button>
-
-</form>
-
-<div class="result" id="resultado">
-    <h2>Resultado del Diagnóstico</h2>
-    <p>
-    Gracias por completar el formulario. Con esta información podemos identificar oportunidades claras para mejorar sus ventas, optimizar su proceso comercial y fortalecer su presencia digital.
-    </p>
-
-    <p>
-    📊 Hemos detectado que su negocio tiene potencial de crecimiento mediante una mejor estructura de ventas, seguimiento de clientes y estrategia digital.
-    </p>
-
-    <p>
-    📞 Para recibir un diagnóstico más detallado y personalizado, puede contactarnos directamente:
-    </p>
-
-    <p><strong>WhatsApp / Teléfono: 8835-6653</strong></p>
-
-    <a class="whatsapp" href="https://wa.me/50688356653" target="_blank">
-        Escribir por WhatsApp
-    </a>
-</div>
-
-</div>
-
-<script>
-document.getElementById("formulario").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let inputs = document.querySelectorAll("input[required]");
-    for (let input of inputs) {
-        if (!input.value) {
-            alert("Por favor complete los campos obligatorios.");
-            return;
-        }
-    }
+    });
+
+    document.getElementById("formulario").style.display = "none";
+
+    document.getElementById("resultado").innerHTML = `
+        <h2>✅ Diagnóstico completado</h2>
+        <h3>${nivel}</h3>
+        <p><strong>Puntuación:</strong> ${score}/100</p>
+        <p>${mensaje}</p>
+
+        <p>
+        Con esta información estaremos generando un diagnóstico detallado de tu negocio.
+        </p>
+
+        <a href="https://wa.me/50688356653" target="_blank">
+            <button>💬 Contactar por WhatsApp</button>
+        </a>
+
+        <p style="margin-top:20px;">
+        Consultanos por nuestros servicios de crecimiento empresarial 🚀
+        </p>
+    `;
 
     document.getElementById("resultado").style.display = "block";
-    window.scrollTo(0, document.body.scrollHeight);
 });
 </script>
 
