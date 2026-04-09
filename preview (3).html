@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Diagnóstico</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #0f172a;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ecfdf5;
+    border: 1px solid #16a34a;
+    border-radius: 10px;
+    display: none;
+}
+
+.whatsapp {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    background: #25D366;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Formulario de Diagnóstico</h1>
+    <p>Gestión Comercial Esquivel | By Oscar Esquivel</p>
+</header>
+
+<div class="container">
+
+<form id="formulario">
+
+<h2>Información General</h2>
+
+<label>Nombre del comercio</label>
+<input type="text" required>
+
+<label>Nombre de quien llena la encuesta</label>
+<input type="text" required>
+
+<label>Fecha</label>
+<input type="date" required>
+
+<h2>Negocio</h2>
+
+<label>Años operando</label>
+<input type="number">
+
+<label>Cantidad de empleados</label>
+<input type="number">
+
+<label>Tipo de muebles que vende más</label>
+<input type="text">
+
+<label>¿Trabaja sobre pedido o inventario?</label>
+<input type="text">
+
+<label>Cliente ideal</label>
+<input type="text">
+
+<label>Diferenciación del negocio</label>
+<textarea></textarea>
+
+<label>Ticket promedio (monto promedio por venta)</label>
+<input type="number">
+
+<h2>Ventas</h2>
+
+<label>Origen de clientes</label>
+<input type="text">
+
+<label>Ventas mensuales</label>
+<input type="number">
+
+<label>Meses fuertes y bajos</label>
+<input type="text">
+
+<label>Razones por pérdida de clientes</label>
+<input type="text">
+
+<label>Tiempo para cerrar una venta</label>
+<input type="text">
+
+<h2>Redes Sociales</h2>
+
+<label>¿Quién maneja redes?</label>
+<input type="text">
+
+<label>Frecuencia de publicación</label>
+<input type="text">
+
+<label>Tipo de contenido</label>
+<input type="text">
+
+<label>¿Facebook genera ventas?</label>
+<input type="text">
+
+<label>Tiempo de respuesta a mensajes</label>
+<input type="text">
+
+<h2>Inversión</h2>
+
+<label>¿Invierte en publicidad?</label>
+<input type="text">
+
+<label>Inversión mensual aproximada</label>
+<input type="number">
+
+<label>¿Quién maneja la pauta?</label>
+<input type="text">
+
+<label>¿Miden costo por cliente?</label>
+<input type="text">
+
+<h2>Operación</h2>
+
+<label>Tiempo de fabricación</label>
+<input type="text">
+
+<label>Mayor problema del negocio</label>
+<input type="text">
+
+<label>¿Han rechazado pedidos?</label>
+<input type="text">
+
+<label>¿Tienen catálogo?</label>
+<input type="text">
+
+<h2>Estructura de Ventas</h2>
+
+<label>¿Registran clientes que consultan?</label>
+<input type="text">
+
+<label>¿Base de datos de clientes?</label>
+<input type="text">
+
+<label>¿Utilizan CRM? (seguimiento de clientes)</label>
+<input type="text">
+
+<label>¿Cómo dan seguimiento?</label>
+<textarea></textarea>
+
+<label>¿Cotizan formalmente o por WhatsApp?</label>
+<input type="text">
+
+<label>¿Hacen seguimiento después de cotizar?</label>
+<input type="text">
+
+<label>¿Cuántos clientes pierden por falta de seguimiento?</label>
+<input type="text">
+
+<h2>Visión</h2>
+
+<label>¿Quieren crecer?</label>
+<input type="text">
+
+<label>¿Quieren aumentar ventas?</label>
+<input type="text">
+
+<label>¿Qué desean mejorar?</label>
+<textarea></textarea>
+
+<h2>Percepción</h2>
+
+<label>¿Por qué lo eligen?</label>
+<textarea></textarea>
+
+<label>¿Qué puede mejorar?</label>
+<textarea></textarea>
+
+<label>Feedback negativo de clientes</label>
+<textarea></textarea>
+
+<button type="submit">Generar Diagnóstico</button>
+
+</form>
+
+<div class="result" id="resultado">
+    <h2>Resultado del Diagnóstico</h2>
+    <p>
+    Gracias por completar el formulario. Con esta información podemos identificar oportunidades claras para mejorar sus ventas, optimizar su proceso comercial y fortalecer su presencia digital.
+    </p>
+
+    <p>
+    📊 Hemos detectado que su negocio tiene potencial de crecimiento mediante una mejor estructura de ventas, seguimiento de clientes y estrategia digital.
+    </p>
+
+    <p>
+    📞 Para recibir un diagnóstico más detallado y personalizado, puede contactarnos directamente:
+    </p>
+
+    <p><strong>WhatsApp / Teléfono: 8835-6653</strong></p>
+
+    <a class="whatsapp" href="https://wa.me/50688356653" target="_blank">
+        Escribir por WhatsApp
+    </a>
+</div>
+
+</div>
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let inputs = document.querySelectorAll("input[required]");
+    for (let input of inputs) {
+        if (!input.value) {
+            alert("Por favor complete los campos obligatorios.");
+            return;
+        }
+    }
+
+    document.getElementById("resultado").style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+});
+</script>
+
+</body>
+</html>
