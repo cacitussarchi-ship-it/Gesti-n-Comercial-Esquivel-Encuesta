@@ -8,6 +8,226 @@
 <style>
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #10b981;
+    color: white;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #059669;
+}
+
+#resultado {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Formulario de Diagnóstico</h1>
+<p>Gestión Comercial Esquivel</p>
+<small>By Oscar Esquivel</small>
+</header>
+
+<div class="container">
+
+<form id="formulario">
+
+<h2>Información General</h2>
+
+<input type="text" placeholder="Nombre del negocio" required>
+<input type="text" placeholder="Nombre de quien llena la encuesta" required>
+<input type="date" required>
+
+<input type="number" placeholder="¿Cuántos años tiene el negocio?" required>
+<input type="number" placeholder="¿Cuántos empleados tienen?" required>
+<input type="text" placeholder="¿Qué tipo de muebles venden?" required>
+<input type="text" placeholder="¿Trabajan por pedido o inventario?" required>
+<input type="text" placeholder="¿Quién es su cliente ideal?" required>
+
+<textarea placeholder="¿Qué los diferencia de otras mueblerías?" required></textarea>
+
+<input type="number" placeholder="Ticket promedio (monto promedio que gasta un cliente)" required>
+
+<h2>Ventas</h2>
+
+<input type="text" placeholder="¿De dónde vienen sus clientes?" required>
+<input type="number" placeholder="¿Cuántas ventas hacen al mes?" required>
+<input type="text" placeholder="¿Meses buenos y malos?" required>
+<input type="text" placeholder="¿Pierden clientes? ¿Por qué?" required>
+<input type="text" placeholder="¿Cuánto duran en cerrar una venta?" required>
+
+<h2>Marketing</h2>
+
+<input type="text" placeholder="¿Quién maneja las redes?" required>
+<input type="text" placeholder="¿Con qué frecuencia publican?" required>
+<input type="text" placeholder="¿Qué tipo de contenido suben?" required>
+<input type="text" placeholder="¿Las redes generan ventas?" required>
+<input type="text" placeholder="Tiempo de respuesta a clientes" required>
+
+<input type="text" placeholder="¿Invierten en publicidad?" required>
+<input type="number" placeholder="¿Cuánto invierten al mes?" required>
+<input type="text" placeholder="¿Quién maneja los anuncios?" required>
+<input type="text" placeholder="¿Costo por cliente?" required>
+
+<h2>Operación</h2>
+
+<input type="text" placeholder="Tiempo de fabricación" required>
+<input type="text" placeholder="Mayor problema operativo" required>
+<input type="text" placeholder="¿Rechazan pedidos?" required>
+<input type="text" placeholder="¿Tienen catálogo?" required>
+
+<input type="text" placeholder="¿Registran clientes?" required>
+<input type="text" placeholder="¿Tienen base de datos?" required>
+<input type="text" placeholder="¿Usan CRM? (software para gestionar clientes)" required>
+
+<textarea placeholder="¿Cómo hacen seguimiento a clientes?" required></textarea>
+
+<input type="text" placeholder="¿Cómo cotizan? (formal o WhatsApp)" required>
+<input type="text" placeholder="¿Dan seguimiento después de la venta?" required>
+<input type="text" placeholder="¿Clientes perdidos?" required>
+
+<h2>Estrategia</h2>
+
+<input type="text" placeholder="¿Quieren crecer?" required>
+<input type="text" placeholder="¿Quieren aumentar ventas?" required>
+
+<textarea placeholder="¿Qué mejorarían del negocio?" required></textarea>
+<textarea placeholder="¿Por qué un cliente los elige?" required></textarea>
+<textarea placeholder="¿Qué quisieran mejorar?" required></textarea>
+<textarea placeholder="Comentarios adicionales" required></textarea>
+
+<button type="submit">Enviar Diagnóstico</button>
+
+</form>
+
+<div id="resultado">
+<h2>✅ Diagnóstico enviado</h2>
+<p>Con esta información podremos darte un análisis más preciso de tu negocio.</p>
+
+<a href="https://wa.me/50688356653" target="_blank">
+<button>Contactar por WhatsApp</button>
+</a>
+</div>
+
+</div>
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const inputs = document.querySelectorAll("input");
+    const textareas = document.querySelectorAll("textarea");
+
+    const data = {
+        negocio: inputs[0].value,
+        nombre: inputs[1].value,
+        anos: inputs[3].value,
+        empleados: inputs[4].value,
+        tipoMuebles: inputs[5].value,
+        pedidoInventario: inputs[6].value,
+        clienteIdeal: inputs[7].value,
+        diferenciacion: textareas[0].value,
+        ticket: inputs[8].value,
+        origen: inputs[9].value,
+        ventas: inputs[10].value,
+        meses: inputs[11].value,
+        perdidas: inputs[12].value,
+        cierre: inputs[13].value,
+        redes: inputs[14].value,
+        frecuencia: inputs[15].value,
+        contenido: inputs[16].value,
+        ventasRedes: inputs[17].value,
+        respuesta: inputs[18].value,
+        ads: inputs[19].value,
+        inversion: inputs[20].value,
+        responsableAds: inputs[21].value,
+        costoCliente: inputs[22].value,
+        fabricacion: inputs[23].value,
+        problema: inputs[24].value,
+        rechazos: inputs[25].value,
+        catalogo: inputs[26].value,
+        registro: inputs[27].value,
+        baseDatos: inputs[28].value,
+        crm: inputs[29].value,
+        seguimiento: textareas[1].value,
+        cotizacion: inputs[30].value,
+        seguimientoPost: inputs[31].value,
+        perdidos: inputs[32].value,
+        crecer: inputs[33].value,
+        aumentar: inputs[34].value,
+        mejoras: textareas[2].value,
+        eleccion: textareas[3].value,
+        mejorar: textareas[4].value,
+        feedback: textareas[5].value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbx2P8MOXI-p3ywtJNQwlElpJnSbkL0g_iuzwYMjzxYOuLPpuTC_T2qHIkgGaJ-l76n6CQ/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        document.getElementById("formulario").style.display = "none";
+        document.getElementById("resultado").style.display = "block";
+    })
+    .catch(() => alert("Error al enviar. Intente de nuevo."));
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Diagnóstico</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
     background: #f4f6f8;
     margin: 0;
     padding: 0;
